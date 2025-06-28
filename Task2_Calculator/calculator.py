@@ -15,12 +15,12 @@ def division(a,b):
     return a / b
 while True:
     try:
-        a = float(input("Enter first number: "))
+        a = (input("Enter first number: "))
         if a.is_float():
             a = float(a)
         else:
             a = w2n.word_to_num(a) 
-        b = float(input("Enter second number: "))
+        b = (input("Enter second number: "))
         if b.is_float():
             b = float(b)
         else:
