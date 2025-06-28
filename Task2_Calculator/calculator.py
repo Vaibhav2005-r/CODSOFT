@@ -1,3 +1,4 @@
+
 from word2number import w2n
 def addition(a,b):
     """Function to add two numbers"""
@@ -13,15 +14,22 @@ def division(a,b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a / b
+def is_float(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
 while True:
     try:
-        a = (input("Enter first number: "))
-        if a.is_float():
+        a = input("Enter first number: ")
+        if is_float(a):
             a = float(a)
         else:
-            a = w2n.word_to_num(a) 
-        b = (input("Enter second number: "))
-        if b.is_float():
+            a = w2n.word_to_num(a)
+        b = input("Enter second number: ")
+        if is_float(b):
             b = float(b)
         else:
             b = w2n.word_to_num(b)
