@@ -1,3 +1,4 @@
+from word2number import w2n
 def addition(a,b):
     """Function to add two numbers"""
     return a + b
@@ -15,7 +16,15 @@ def division(a,b):
 while True:
     try:
         a = float(input("Enter first number: "))
+        if a.is_float():
+            a = float(a)
+        else:
+            a = w2n.word_to_num(a) 
         b = float(input("Enter second number: "))
+        if b.is_float():
+            b = float(b)
+        else:
+            b = w2n.word_to_num(b)
     except ValueError:
         print("Invalid input. Please enter numeric values.")
         continue
@@ -36,4 +45,3 @@ while True:
             print(e)
     else:
         print("Invalid operation. Please try again.")
-
